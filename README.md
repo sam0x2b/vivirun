@@ -45,5 +45,6 @@ Implements IGT and all timer behaviors (start, split, reset). Also provides vers
 
 ## License
 GNU Geenral Public License Version 2
+
 _"Vivirun" graphic made by recreating and combining graphisc from screenchots of the game._
 

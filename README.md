@@ -9,7 +9,7 @@ _Vividerie is a rouge-like bullet-hell pixel-art RoTMG-inspired game developed b
 Implements IGT and all timer behaviors (start, split, reset). Also provides version checking (based on the data.win hash). Built-in settings provide control over optional splits and debugging features. Log files are located in `"vivi_asl"` folder aside the script.
 
 **Supported versions:**
-- `0.11` -- "indev" build, was distributed for limited time durring public playtesting session. File version is `0.1.0.0`. _IGT uses level's frame counter, so pausing in game pauses IGT_.
+- `0.11` -- "indev" build, was distributed for limited time during public playtesting session. File version is `0.1.0.0`. _IGT uses level's frame counter, so pausing in game pauses IGT_.
 
 **Deprecated versions:**
 - `0.1` -- buggy, version `0.11` changed nothing in terms of gameplay.
@@ -23,7 +23,7 @@ Implements IGT and all timer behaviors (start, split, reset). Also provides vers
 **Resets:**
 - Closing the game;
 - Exiting to main menu;
-- Resetting using in-game key or dying (even if the last split happened; **if you die after defeating last boss confirm your times as quick as possible!**).
+- Resetting using in-game key or dying (even if the last split happened; **if you die after defeating last boss confirm your times as quickly as possible!**).
 
 
 ### Special thanks

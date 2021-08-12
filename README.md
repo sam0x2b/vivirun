@@ -34,7 +34,7 @@ Implements IGT and all timer behaviors (start, split, reset). Also provides vers
 - `r0-1a (v0.1.2)`
 	- Fixed no version error message when `chime` is off;
 	- `chime` is off by default;
-	- Logging by default if off for all levels (`log` and `debug`) and does not create unnecesary files;
+	- Logging by default if off for all levels (`log` and `debug`) and does not create unnecessary files;
 	- More clear tick logging;
 	- `update{}` now compares ticks and not states;
 	- Removed unnecessary code in `init{}`.

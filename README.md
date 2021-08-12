@@ -31,7 +31,7 @@ Implements IGT and all timer behaviors (start, split, reset). Also provides vers
 - **doesthisusername** for making me addicted to A Hat In Time speedruns (and making me try speedrunning unknown games like this one too).
 
 ### Changelog
-- `r0-1 (v0.01)`
+- `r0-1 (v0.1.1)`
 	- initial
 
 ## License

@@ -31,6 +31,13 @@ Implements IGT and all timer behaviors (start, split, reset). Also provides vers
 - **doesthisusername** for making me addicted to A Hat In Time speedruns (and making me try speedrunning unknown games like this one too).
 
 ### Changelog
+- `r0-1a (v0.1.2)`
+	- Fixed no version error message when `chime` is off;
+	- `chime` is off by default;
+	- Logging by default if off for all levels (`log` and `debug`) and does not create unnecessary files;
+	- More clear tick logging;
+	- `update{}` now compares ticks and not states;
+	- Removed unnecessary code in `init{}`.
 - `r0-1 (v0.1.1)`
 	- initial
 

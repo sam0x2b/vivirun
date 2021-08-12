@@ -25,22 +25,23 @@ state("Vividerie", "0.11")
 startup
 {
 	settings.Add("enemies", false, "Split on all enemies killed (100%)");
-	settings.Add("log", true, "Enable basic logging");
+	settings.Add("log", false, "Enable basic logging");
 	settings.Add("debug", false, "Enable verbose logging");
-	settings.Add("chime", true, "Sounds when checking versions");
-
-	Directory.CreateDirectory("vivi_asl");
-	if (File.Exists("vivi_asl/vivi_asl.log.9"))
-		File.Delete("vivi_asl/vivi_asl.log.9");
-	for (int i = 9; i > 0; --i)
-		if (File.Exists("vivi_asl/vivi_asl.log." + (i-1)))
-			File.Move("vivi_asl/vivi_asl.log." + (i-1), "vivi_asl/vivi_asl.log." + i);
+	settings.Add("chime", false, "Sounds when checking versions");
 }
 
 init
 {
 	#region logging
 	// thx Undertale asl
+	if(settings["log"]) {
+		Directory.CreateDirectory("vivi_asl");
+		if (File.Exists("vivi_asl/vivi_asl.log.9"))
+			File.Delete("vivi_asl/vivi_asl.log.9");
+		for (int i = 9; i > 0; --i)
+			if (File.Exists("vivi_asl/vivi_asl.log." + (i-1)))
+				File.Move("vivi_asl/vivi_asl.log." + (i-1), "vivi_asl/vivi_asl.log." + i);
+	}
 	vars.log = (Func<string, bool>)((message) =>
 	{
 		if(settings["log"]) {
@@ -54,7 +55,7 @@ init
 	});
 	vars.dbg = (Func<string, bool>)((message) =>
 	{
-		if(settings["debug"]) {
+		if(settings["debug"] && settings["log"]) {
 			using (StreamWriter sw = File.AppendText("vivi_asl/vivi_asl.log.0"))
 				sw.WriteLine(DateTime.Now.ToString("HHmmssff  ") + 
 				"DBG " + message);
@@ -63,7 +64,8 @@ init
 		print("DBG " + message);
 		return false;
 	});
-	vars.log("[info] vivirun by keycattie [r0-1]");
+
+	vars.log("[info] vivirun by keycattie [r0-1a v0.1.2]");
 	#endregion // logging
 
 	#region version check
@@ -99,25 +101,30 @@ init
 		vars.dbg("[info] modulesize: " + moduleSize + ", hash:" + hash);
 	}
 
-	if(settings["chime"]) {
-		if(string.IsNullOrEmpty(vars.version)) {
+	if(string.IsNullOrEmpty(vars.version)) {
+		vars.log("[err ] cant run: wrong hash");
+		if(settings["chime"]) {
 			Console.Beep(440, 100);
 			Console.Beep(38, 25);
 			Console.Beep(440, 50);
 			Console.Beep(370, 100);
-			vars.log("[err ] cant run: wrong hash");
-		} else if(norun) {
-			vars.log("[info] Vividerie v" + vars.version);
-			Console.Beep(330, 100);
-			Console.Beep(290, 50);
-			Console.Beep(330, 100);
-			Console.Beep(277, 50);
-			vars.log("[err ] cant run: deprecated version");
+		}
+	} else { 
+		vars.log("[info] Vividerie v" + vars.version);
+		if(norun) {
+				vars.log("[err ] cant run: deprecated version");
+			if(settings["chime"]) {
+				Console.Beep(330, 100);
+				Console.Beep(290, 50);
+				Console.Beep(330, 100);
+				Console.Beep(277, 50);
+			}
 		} else {
-			vars.log("[info] Vividerie v" + vars.version);
-			Console.Beep(295, 50);
-			Console.Beep(38, 1);
-			Console.Beep(495, 100);
+			if(settings["chime"]) {
+				Console.Beep(295, 50);
+				Console.Beep(38, 1);
+				Console.Beep(495, 100);
+			}
 		}
 	}
 	#endregion // version check
@@ -136,12 +143,10 @@ init
 				var fail = true;
 				for(var i = patterns.Length - 1; i >= 0; --i) { 
 					var pattern = patterns[i];
-					if(dbg) vars.dbg("[mtch] testing " + pattern + " on " + vars.ticks[vars.ticks.Count - patterns.Length + i]);
+					var target = vars.ticks[vars.ticks.Count - patterns.Length + i];
+					if(dbg) vars.dbg("[mtch] testing " + pattern + " on " + target);
 					pattern = pattern.Replace("?", "\\S"); 
-					var res = System.Text.RegularExpressions.Regex.IsMatch(
-						vars.ticks[vars.ticks.Count - patterns.Length + i], 
-						pattern, 
-						0);
+					var res = System.Text.RegularExpressions.Regex.IsMatch(target, pattern, 0);
 					vars.dbg("[mtch] result " + res);
 					if(!res) {
 						fail = true;
@@ -179,22 +184,6 @@ init
 		vars.split = false;
 		vars.reset = false;
 		vars.start = false;
-
-		current.now_menu = false;
-		current.now_loading = false;
-		current.now_caves = false;
-		current.now_titan = false;
-		current.clear_caves = false;
-		current.clear_titan = false;
-		current.framedrop = false;
-
-		old.now_menu = false;
-		old.now_loading = false;
-		old.now_caves = false;
-		old.now_titan = false;
-		old.clear_caves = false;
-		old.clear_titan = false;
-		old.framedrop = false;
 		break; // 0.11
 	}
 }
@@ -204,57 +193,37 @@ update
 {
 	switch((string)vars.version) {
 	case "0.11":
-		old.now_menu	= current.now_menu;
-		old.now_loading	= current.now_loading;
-		old.now_caves	= current.now_caves;
-		old.now_titan	= current.now_titan;
-		old.clear_caves	= current.clear_caves;
-		old.clear_titan	= current.clear_titan;
-		old.framedrop	= current.framedrop;
-	
-		current.now_menu	= current.menu == 32;
 		current.now_loading	= current.level == 4096;
-		current.now_caves	= current.level == 2047;
-		current.now_titan	= current.level == 3071;
-		current.clear_caves	= current.enemies == 0;
-		current.clear_titan	= current.titan_health <= 0d;
 		current.framedrop	= current.frame < old.frame;
-		
-		if(
-			current.now_menu	!=	old.now_menu	||
-			current.now_loading	!=	old.now_loading	||
-			current.now_caves	!=	old.now_caves	||
-			current.now_titan	!=	old.now_titan	||
-			current.clear_caves	!=	old.clear_caves	||
-			current.clear_titan	!=	old.clear_titan	||
-			current.framedrop	!=	old.framedrop	||
-			false) {
-				string tick = "" +
-					((current.now_menu)	? "m" : "_") +
-					((current.now_loading)	? "l" : "_") +
-					((current.now_caves)	? "0" : "_") +
-					((current.now_titan)	? "1" : "_") +
-					((current.clear_caves)	? "e" : "_") +
-					((current.clear_titan)	? "b" : "_") +
-					((current.framedrop)	? "f" : "_") +
-					"";
-					vars.ticks.Add(tick);
-				vars.log("[tick] " + tick + "\t"+ current.frame + "\t" + old.frame);
+		string tick = "" +
+			((current.menu == 32)			? "m" : "_") +
+			((current.now_loading)			? "l" : "_") +
+			((current.level == 2047)		? "0" : "_") +
+			((current.level == 3071)		? "1" : "_") +
+			((current.enemies == 0)			? "e" : "_") +
+			((current.titan_health <= 0d)	? "b" : "_") +
+			((current.framedrop)			? "f" : "_") +
+			"";
 
-				vars.reset = vars.match(vars.resets);
-				if(vars.reset) vars.log("[upd ] matched reset, tick " + (vars.ticks.Count - 2));
+		if(!String.Equals(vars.ticks[vars.ticks.Count - 1], tick)) {
+			vars.ticks.Add(tick);
+			vars.log("[tick] " + (vars.ticks.Count - 2) + " " + tick +
+				"\tframes "+ old.frame + " to " + current.frame);
+
+			vars.reset = vars.match(vars.resets);
+			if(vars.reset) vars.log("[upd ] matched reset");
+			else {
+				vars.split = false; // fix for fresh game startup
+				vars.start = vars.match(vars.starts);
+				if(vars.start) vars.log("[upd ] matched start");
 				else {
-					vars.split = false; // fix for fresh game startup
-					vars.start = vars.match(vars.starts);
-					if(vars.start) vars.log("[upd ] matched start, tick " + (vars.ticks.Count - 2));
-					else {
-						vars.split = vars.match(vars.splits);
-						if(vars.split) vars.log("[upd ] matched split, tick " + (vars.ticks.Count - 2));
-					}
+					vars.split = vars.match(vars.splits);
+					if(vars.split) vars.log("[upd ] matched split");
 				}
-				if(current.framedrop) vars.frames += old.frame;
 			}
-			if(current.enemies != old.enemies) vars.dbg("[upd ] enemies " + current.enemies);
+			if(current.framedrop) vars.frames += old.frame;
+		}
+		if(current.enemies != old.enemies) vars.dbg("[upd ] enemies " + current.enemies);
 		break; // 0.11
 	default:
 		return false;
@@ -284,8 +253,8 @@ reset
 		bool reset = vars.reset;
 		if(reset) {
 			vars.igton = false;
-			vars.log("[rst ] time " + (vars.frames + current.frame) / 60d);
 			vars.frames = 0d;
+			vars.log("[rst ] time " + (vars.frames + current.frame) / 60d);
 		}
 		vars.reset = false;
 		return reset;
@@ -294,16 +263,16 @@ reset
 }
 
 start
-{	
+{
 	switch((string)vars.version) {
 	case "0.11":
 		bool start = vars.start;
 		if(start) {
 			vars.igton = true;
 			vars.frames = 0d;
-			vars.log("[strt]" + ((settings["enemies"]) ? " 100%" : ""));
 			vars.ticks.Clear();
 			vars.ticks.Add("_______");
+			vars.log("[strt]" + ((settings["enemies"]) ? " 100%" : ""));
 		}
 		vars.start = false;
 		return start;
@@ -321,7 +290,8 @@ isLoading
 }
 
 gameTime
-{	switch((string)vars.version) {
+{
+	switch((string)vars.version) {
 	case "0.11":
 		return TimeSpan.FromSeconds((vars.frames + current.frame) / 60d);
 		break; // 0.11

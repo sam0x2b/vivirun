@@ -1,7 +1,9 @@
 # vivirun
 Vividerie AutoSplitter for LiveSplit
 
-_Vividerie is a game developed by WangleLine._
+_Vividerie is a rouge-like bullet-hell pixel-art RoTMG-inspired game developed by WangleLine._
+
+![vivirun banner](https://user-images.githubusercontent.com/77988565/129139065-8b226797-cc23-436e-bfd5-d370e2a34d70.png)
 
 ### About
 Implements IGT and all timer behaviors (start, split, reset). Also provides version checking (based on the data.win hash). Built-in settings provide control over optional splits and debugging features. Log files are located in `"vivi_asl"` folder aside the script.
@@ -43,4 +45,5 @@ Implements IGT and all timer behaviors (start, split, reset). Also provides vers
 
 ## License
 GNU Geenral Public License Version 2
+_"Vivirun" graphic made by recreating and combining graphisc from screenchots of the game._
 

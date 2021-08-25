@@ -43,6 +43,13 @@ Implements IGT and all timer behaviors (start, split, reset). Also provides vers
 - `r0-1 (v0.1.1)`
 	- initial
 
+### Future plans
+- Structuraly rigid state matching to replace strings;
+- Full featured state machine as a backend;
+- Support for delayed events;
+- Shortening `update{}` as much as possible without relying on potential function arguments;
+- _When the game releases_, export to LiveSplit public repo.
+
 ## License
 GNU Geenral Public License Version 2
 

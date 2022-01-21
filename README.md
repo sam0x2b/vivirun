@@ -7,7 +7,7 @@ Vividerie AutoSplitter for LiveSplit
 
 [Steam](https://store.steampowered.com/app/1769200/Vividerie/) *TBR (Q3 2022)* | [The Internet Archive](https://archive.org/details/vividerie-0.1) *Alpha 0.11*
 
-[Dame's Discord](https://discord.gg/R7GE7qEAw2) | [WnagleLine's Discord](http://discord.gg/DbfTn7w)
+[Game's Discord](https://discord.gg/R7GE7qEAw2) | [WnagleLine's Discord](http://discord.gg/DbfTn7w)
 
 ### About
 Implements IGT and all timer behaviors (start, split, reset). Also provides version checking (based on the data.win hash). Built-in settings provide control over optional splits and debugging features. Log files are located in `"vivi_asl"` folder aside the script.

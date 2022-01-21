@@ -5,7 +5,9 @@ Vividerie AutoSplitter for LiveSplit
 
 > Run, shoot, dash and magic your way through hordes of vile creatures in various procedurally generated dungeons. Combine items in countless ways and master each character – all while discovering secret places and finding out more about the enchanted world of Vividerie. 
 
-[Steam](https://store.steampowered.com/app/1769200/Vividerie/) *TBA* | [The Internet Archive](https://archive.org/details/vividerie-0.1) *Alpha 0.11*
+[Steam](https://store.steampowered.com/app/1769200/Vividerie/) *TBR (Q3 2022)* | [The Internet Archive](https://archive.org/details/vividerie-0.1) *Alpha 0.11*
+
+[Dame's Discord](https://discord.gg/R7GE7qEAw2) | [WnagleLine's Discord](http://discord.gg/DbfTn7w)
 
 ### About
 Implements IGT and all timer behaviors (start, split, reset). Also provides version checking (based on the data.win hash). Built-in settings provide control over optional splits and debugging features. Log files are located in `"vivi_asl"` folder aside the script.
@@ -29,8 +31,8 @@ Implements IGT and all timer behaviors (start, split, reset). Also provides vers
 
 
 ### Special thanks
-- **WangleLine** for banning me from her server and ignoring bug reports; Also making this game;
-- Line's Discord servers members for updating me on Vividerie development process *(yeup, still banned...)*;
+- **WangleLine** for making this amazing game game. Updates on the game development are here https://trello.com/b/HBLu50ih/vividerie;
+- Line's Discord servers members for updating me on Vividerie development process when I'm not arround;
 - **SFKR** for uploading all the game versions on The Internet Archive;
 - **Ero** from LiveSplit Discord development community for help in early stages of development;
 - **doesthisusername** for making me addicted to A Hat In Time speedruns (and making me try speedrunning unknown games like this one too).

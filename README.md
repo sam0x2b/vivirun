@@ -18,24 +18,30 @@ Implements IGT and all timer behaviors (start, split, reset). Also provides vers
 **Deprecated versions:**
 - `"alpha" 0.1` -- buggy, version `0.11` changed nothing in terms of gameplay.
 
-**Splits:**
+**Splits when:**
 - `(start)` Crystal Caves level entered;
 - `(optional)` Crystal Caves cleared;
 - Crystal Titan level entered;
 - Crystal Titan defeated.
 
-**Resets:**
+**Resets when:**
 - Closing the game;
 - Exiting to main menu;
 - Resetting using in-game key or dying (even if the last split happened; **if you die after defeating last boss confirm your times as quickly as possible!**).
 
+### Troubleshooting
+- Make sure you have 2 splits when running `Any%` or 3 when running `100%` (we are working on the speedrum.com page now, be patient);
+- When reporting a bug, please make sure you have the latest version of LiveSplit and the script itself;
+- If a bug happened, please do not restart the game, archive `vivi_asl.log.0` and `vivi_asl.log.1` files from `vivi_asl` folder in LiveSplit's program dirrectory; I might ask for those for figuring out that happened;
+- It's better to enable both verbose and basic logging in script settings if you are trying to reproduce the bug.
 
 ### Special thanks
 - **WangleLine** for making this amazing game game. Updates on the game development are here https://trello.com/b/HBLu50ih/vividerie;
 - Line's Discord servers members for updating me on Vividerie development process when I'm not arround;
+- **Hudson** for being a walkin'-talkin' user error :3 /jk;
 - **SFKR** for uploading all the game versions on The Internet Archive;
 - **Ero** from LiveSplit Discord development community for help in early stages of development;
-- **doesthisusername** for making me addicted to A Hat In Time speedruns (and making me try speedrunning unknown games like this one too).
+- **doesthisusername** for making me addicted to A Hat In Time speedruns (thus making me try speedrunning unknown games like this one too).
 
 ### Changelog
 - `r0-1a (v0.1.2)`
@@ -62,4 +68,5 @@ Implements IGT and all timer behaviors (start, split, reset). Also provides vers
 GNU Geenral Public License Version 2
 
 _"Vivirun" graphic made by recreating and combining graphics from indev screenchots of the game._
+_Happy running!_
 

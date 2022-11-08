@@ -5,6 +5,8 @@ Vividerie AutoSplitter for LiveSplit
 
 **THIS SCRIPT WILL BE REWRITTEN COMPLETELY. THE GAME USES YYC NOW. FURTHERMORE, THIS SCRIPT IS BAD AND SUCKS ASS. REWRITING IT AFTER THE GAME PUBLICLY RELEASES**
 
+**IM ALSO A PRIVATE PLAYTESTER NOW, TRYING TO GET SOME BAKED IN SPEEDRUN TIMER SUPPORT. I HOPE WE WILL HAVE IT ;3**
+
 ![vivirun banner v2](https://user-images.githubusercontent.com/77988565/145692998-f45c6aa0-20fa-4786-88c7-b2b9f6a809ab.png)
 
 > Run, shoot, dash and magic your way through hordes of vile creatures in various procedurally generated dungeons. Combine items in countless ways and master each character – all while discovering secret places and finding out more about the enchanted world of Vividerie. 

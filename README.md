@@ -60,16 +60,6 @@ Implements IGT and all timer behaviors (start, split, reset). Also provides vers
 - `r0-1 (v0.1.1)`
 	- initial
 
-### TODO
-- [x] Basic functionality;
-- [x] Settings;
-- [x] Shortening `update{}` as much as possible;
-- [x] Exhaustive testing; 
-- [ ] Pattern matching for cleaner state string generation;
-- [ ] Bit fields to replace strings;
-- [ ] Support for delayed events (internal counters);
-- [ ] _When the game releases_, export to LiveSplit public repo.
-
 ## License
 GNU Geenral Public License Version 2
 

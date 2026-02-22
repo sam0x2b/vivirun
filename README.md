@@ -1,6 +1,8 @@
 # vivirun
 Vividerie AutoSplitter for LiveSplit
 
+*** CURRENTLY IN DEVELOPMENT ***
+
 # IMPORTANT NOTICE
 
 **THIS SCRIPT WILL BE REWRITTEN COMPLETELY. THE GAME USES YYC NOW. FURTHERMORE, THIS SCRIPT IS BAD AND SUCKS ASS. REWRITING IT AFTER THE GAME PUBLICLY RELEASES**
@@ -42,7 +44,7 @@ Implements IGT and all timer behaviors (start, split, reset). Also provides vers
 - It's better to enable both verbose and basic logging in script settings if you are trying to reproduce the bug.
 
 ### Special thanks
-- **WangleLine** for making this amazing game game. Updates on the game development are here https://trello.com/b/HBLu50ih/vividerie;
+- **WangleLine** for making this amazing game game. Updates on the game development are on game's [Discord server](https://discord.gg/nABbtZT4bj);
 - Line's Discord servers members for updating me on Vividerie development process when I'm not arround;
 - **Hudson** for being a walkin'-talkin' user error :3 /jk;
 - **SFKR** for uploading all the game versions on The Internet Archive;

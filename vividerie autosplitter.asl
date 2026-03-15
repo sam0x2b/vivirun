@@ -33,12 +33,13 @@ startup
 		"13 08 25 39 27 3D 50 13 5E 33 5B 14 03 32 2A 04" // Magic
 	); 
 
-	settings.Add("alt_reset", false, "On retry, reset the timer, not the run");
+	settings.Add("alt_reset", false, "Do not count Crystal Caves resets");
 	settings.SetToolTip(
 		"alt_reset",
-		"Instead of resetting the entire run and adding to the attempt " +
-"count, just reset the time (only in Crystal Caves). Useful for rotating " +
-"dungeon generation at the start of the run."
+		"While in Crystal Caves, retrying does not reset the run " +
+"completely. It will only reset the time, but will not stop the timer, " +
+"and the attempt counter will not increase. Useful for rotating through " +
+"dungeon generation."
 	);
 }
 

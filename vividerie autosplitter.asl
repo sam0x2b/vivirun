@@ -18,7 +18,7 @@
     with this program; if not, see <https://www.gnu.org/licenses/>.
 */
 
-// VERSION: v0.48-rev0
+// VERSION: v0.48-rev1
 
 
 state("Vividerie")
@@ -74,7 +74,7 @@ init
 		vars.room_id         = new MemoryWatcher<ulong>(ptr + 0x88);
 		vars.room_time       = new MemoryWatcher<ulong>(ptr + 0x90);
 		vars.is_paused       = new MemoryWatcher<ulong>(ptr + 0x98);
-		//vars.is_game_won     = new MemoryWatcher<ulong>(ptr + 0xA0);
+		vars.is_game_won     = new MemoryWatcher<ulong>(ptr + 0xA0);
 		vars.is_boss_dead    = new MemoryWatcher<ulong>(ptr + 0xA8);
 
 		vars.watchers = new MemoryWatcherList() {
@@ -82,7 +82,7 @@ init
 			vars.room_id,
 			vars.room_time,
 			vars.is_paused,
-			//vars.is_game_won,
+			vars.is_game_won,
 			vars.is_boss_dead
         };
 
@@ -110,7 +110,8 @@ split
 {
 	return
 		(vars.room_id.Old < vars.room_id.Current && vars.room_id.Old % 2 == 0)
-		|| vars.is_boss_dead.Current > vars.is_boss_dead.Old;
+		|| vars.is_boss_dead.Current > vars.is_boss_dead.Old
+		|| vars.is_game_won.Current == 1;
 }
 
 

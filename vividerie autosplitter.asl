@@ -18,7 +18,8 @@
     with this program; if not, see <https://www.gnu.org/licenses/>.
 */
 
-// VERSION: v0.48-rev1
+// VERSION: v0.49-rev0
+// NOTE: also supports versions down to 0.48
 
 
 state("Vividerie")

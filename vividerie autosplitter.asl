@@ -1,21 +1,12 @@
-
+// vivirun, a LiveSplit AutoSplitter for use with Vividerie by WangleLine
 /*
-	vivirun, a LiveSplit AutoSplitter for use with Vividerie by
-	WangleLine, is provided under GPL-2.0.
-	Copyright (C) 2026  Vivirun Team
+	Copyright 2026 Sam Pazur
 
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation; either version 2 of the License, or
-    (at your option) any later version.
+	Licensed under the NON-AI License, Version 2.0 (the "License");  you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+		<http://www.apache.org/licenses/LICENSE-2.0>
 
-    You should have received a copy of the GNU General Public License along
-    with this program; if not, see <https://www.gnu.org/licenses/>.
+	Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the License for the specific language governing permissions and limitations under the License.
 */
 
 // VERSION: v0.49-rev0
@@ -49,9 +40,9 @@ init
 {
 	// thx A Hat In Time ASL
 	vars.threadScan = new Thread(() => {
-        var ptr = IntPtr.Zero;
+		var ptr = IntPtr.Zero;
 
-        foreach (var page in game.MemoryPages(true).Reverse()) {
+		foreach (var page in game.MemoryPages(true).Reverse()) {
 			var scanner = new SignatureScanner(
 				game, 
 				page.BaseAddress, 
@@ -62,14 +53,14 @@ init
 			} else {
 				break;
 			}
-        }
+		}
 
 		if (ptr == IntPtr.Zero) {
 			Thread.Sleep(1000); // NOTE: a crude hack
 			// NOTE: this does produce heaps of garbage in dbgview
 			// But restarts `init {}`!
 			throw new Exception(); 
-        }
+		}
 		// 0x00 and 0x40 are game version strings
 		vars.is_player_dead  = new MemoryWatcher<ulong>(ptr + 0x80);
 		vars.room_id         = new MemoryWatcher<ulong>(ptr + 0x88);
@@ -85,19 +76,19 @@ init
 			vars.is_paused,
 			vars.is_game_won,
 			vars.is_boss_dead
-        };
+		};
 
 		vars.total_time = 0UL;
 	});
-    vars.threadScan.Start();
+	vars.threadScan.Start();
 }
 
 
 update
 {
-    if(vars.threadScan.IsAlive){
-        return false;
-    }
+	if(vars.threadScan.IsAlive){
+		return false;
+	}
 	vars.watchers.UpdateAll(game);
 
 	// timer stops running if player dead. idk about this behavior tbh 

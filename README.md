@@ -7,13 +7,15 @@ Implements Game Time and all timer behaviors (start, split, reset).  Has a setti
 
 ## Supported game versions
 
-**UNKNOWN!**  A pre-release version of the game was used for the development of this script.  It will be updated for the official release.  When the game gets its entry on [speedrun.com](https://speedrun.com/), this AutoSplitter will be available in LiveSplit natively.  Before that there is no guarantee of any backwards or forwards compatibility!
+**June 8th 2026 public demo is supported.**  Version 0.48 is also supported.  The script will be updated for the official release.  When the game gets its entry on [speedrun.com](https://speedrun.com/), this AutoSplitter will be available in LiveSplit natively.  Before that there is no guarantee of any backwards or forwards compatibility (altho the script might work, you will have to try.)
 
 ## Download and use
 
 A `*.zip` with the AutoSplitter (`*.asl`), splits (`*.lss`) and basic layout (`*.lsl`) can be found in the latest release [on this page](https://github.com/sam0x2b/vivirun/releases).  Package version should match the latest supported game version.  Backward or forward compatibility is not guaranteed!
 
 An example of how to use these files can be found [here](https://steamcommunity.com/sharedfiles/filedetails/?id=2860375240) (for reference only).
+
+`[NOTE]` It is strongly recommended to speedrun the game **"Hit-Freeze"** effect disabled!  It can be found in Settings > Accessibility.
 
 ## More info
 
@@ -41,6 +43,7 @@ To help me diagnose the issue (especially a crash) you would have to export even
 If you are able to find exact event log messages relating to the crash, you can just attach those as text **with timestamps**.
 
 ## License
+
 vivirun, a LiveSplit AutoSplitter for use with Vividerie by WangleLine, is provided under GNU General Public License Version 2. Copyright (C) 2026  Vivirun Team
 
 ## Vividerie links

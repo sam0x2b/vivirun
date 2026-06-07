@@ -72,15 +72,6 @@
       <BestSegmentTime />
       <SegmentHistory />
     </Segment>
-    <Segment>
-      <Name>Prototype Bay</Name>
-      <Icon />
-      <SplitTimes>
-        <SplitTime name="Personal Best" />
-      </SplitTimes>
-      <BestSegmentTime />
-      <SegmentHistory />
-    </Segment>
   </Segments>
   <AutoSplitterSettings />
 </Run>

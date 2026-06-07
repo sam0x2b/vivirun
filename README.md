@@ -38,7 +38,7 @@ To help me diagnose the issue (especially a crash) you would have to export even
 - filter the log (right panel > Filter Current Log... > Logged: `Last hour` (or other appropriate timeframe) > change `<All Event IDs>` to `0`);
 - save filtered log as file (right panel) with no display information.
 
-`[IMPORTANT NOTE]` This file may contain personal information, like your user name, computer name, folder structure, and whatever else Windows decides to put it.  Throwing it on the web for everyone to see is not a great idea!  You can tell me in the issue how to contact you to get it.
+`[IMPORTANT NOTE]` This file may contain personally identifiable information, like your user name, computer name, folder structure, and whatever else Windows decides to put it.  Throwing it on the web for everyone to see is not a great idea!  You can tell me in the issue how to contact you to get it.
 
 If you are able to find exact event log messages relating to the crash, you can just attach those as text **with timestamps**.
 

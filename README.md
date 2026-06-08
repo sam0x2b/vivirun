@@ -47,7 +47,8 @@ If you are able to find exact event log messages relating to the crash, you can 
 
 ## More info
 
-Check [DOC.md](DOC.md).
+Check [DOC.md](DOC.md). LiveSplit PR tracking:
+- <https://github.com/LiveSplit/LiveSplit.AutoSplitters/pull/2786> (Initial)
 
 ## License
 

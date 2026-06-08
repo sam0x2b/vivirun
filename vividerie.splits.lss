@@ -73,5 +73,13 @@
       <SegmentHistory />
     </Segment>
   </Segments>
-  <AutoSplitterSettings />
+  <AutoSplitterSettings>
+    <Version>1.5</Version>
+    <Start>True</Start>
+    <Reset>True</Reset>
+    <Split>True</Split>
+    <CustomSettings>
+      <Setting id="alt_reset" type="bool">True</Setting>
+    </CustomSettings>
+  </AutoSplitterSettings>
 </Run>

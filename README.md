@@ -9,7 +9,7 @@
 
 ## Install and use
 
-`[NOTE]` It is strongly recommended to speedrun the game **"Hit-Freeze"** effect disabled!  It can be found in Settings > Accessibility.
+`[NOTE]` It is strongly recommended to speedrun the game with the **"Hit-Freeze"** effect disabled!  It can be found in Settings > Accessibility.
 
 ### LiveSplit-native
 
@@ -34,14 +34,14 @@ Before you report an issue, please check your copies of both Vividerie and LiveS
 
 If you find an issue with the **AutoSplitter** (not the layout or the splits or the LiveSplit itself), you can *easily* find me on the game's Discord server.  If you have a GitHub account, you can create an issue in this repository.  If you feel fancy, you can contact me via [qrysa@disroot.org](mailto:qrysa@disroot.org?subject=vivirun%20issue%20report) (OpenPGP included).
 
-To help me diagnose the issue (especially a crash) you would have to export event viewer log:
+To help me diagnose the issue (especially a crash) you would have to export the event viewer log:
 
 - open Event Viewer (`Win+X` then `V`);
 - select Applications log (left panel > Windows Logs > Application);
 - filter the log (right panel > Filter Current Log... > Logged: `Last hour` (or other appropriate timeframe) > change `<All Event IDs>` to `0`);
 - save filtered log as file (right panel) with no display information.
 
-`[IMPORTANT NOTE]` This file may contain personally identifiable information, like your user name, computer name, folder structure, and whatever else Windows decides to put it.  Throwing it on the web for everyone to see is not a great idea!  You can tell me in the issue how to contact you to get it.
+`[IMPORTANT NOTE]` This file may contain personally identifiable information, like your user name, computer name, folder structure, and whatever else Windows decides to put in.  Throwing it on the web for everyone to see is not a great idea!  You can tell me in the issue how to contact you to get it.
 
 If you are able to find exact event log messages relating to the crash, you can just attach those as text **with timestamps**.
 

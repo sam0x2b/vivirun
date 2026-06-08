@@ -1,9 +1,7 @@
 
 # Vivirun
 
-**vivirun** is a LiveSplit AutoSplitter for use with Vividerie by WangleLine.
-
-Implements Game Time and all timer behaviors (start, split, reset).  Has a setting for an alternative reset behavior. 
+**vivirun** is a LiveSplit AutoSplitter for use with Vividerie by WangleLine.  Auto start, configurable reset.  Provides in-game time.  Splits at every room, including boss chambers.  Is available through LiveSplit natively.
 
 ## Supported game versions
 
@@ -46,7 +44,7 @@ If you are able to find exact event log messages relating to the crash, you can 
 
 Copyright 2026 Sam Pazur
 
-Licensed under the NON-AI License, Version 2.0 (the "License");  you may not use this file except in compliance with the License. You may obtain a copy of the License at <https://raw.githubusercontent.com/non-ai-licenses/non-ai-licenses/main/NON-AI-APACHE2>
+Licensed under the Apache NON-AI License, Version 2.0 (the "License");  you may not use this file except in compliance with the License. You may obtain a copy of the License at <https://raw.githubusercontent.com/non-ai-licenses/non-ai-licenses/main/NON-AI-APACHE2>
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the License for the specific language governing permissions and limitations under the License.
 

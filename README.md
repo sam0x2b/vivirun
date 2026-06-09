@@ -1,11 +1,10 @@
-
 # Vivirun
 
-**vivirun** is a LiveSplit AutoSplitter for use with Vividerie by WangleLine.  Auto start, configurable reset.  Provides in-game time.  Splits at every room, including boss chambers.  Is available through LiveSplit natively.
+**vivirun** is a LiveSplit AutoSplitter for use with Vividerie by WangleLine.  Auto start and reset, in-game time.  Splits at every room, including boss chambers.  Is available through LiveSplit natively.
 
 ## Supported game versions
 
-**June 8th 2026 public demo is supported** (v0.49).  Version 0.48 is also supported.  This script will be updated for every official release (in due time).  There is no guarantee of any backwards or forwards compatibility (altho the script might work, you will have to try it).
+**2026 public demo is supported.**  The target version of the release (first part) is the version of the game last tested with the AutoSplitter.  **v0.48** is also supported.  This script will be updated whenever necessary and tested with every game version (in due time).  There is no guarantee of any backwards or forwards compatibility (yet... altho the script might work, you will have to check that for yourself).
 
 ## Install and use
 
@@ -17,16 +16,16 @@ Open LiveSplit > right click on the timer window > Open Splits > From URL... > p
 
     https://github.com/sam0x2b/vivirun/releases/latest/download/vivirun.splits.lss
 
-Alternatively, download the splits file (`*.lss`) from the [latest release](https://github.com/sam0x2b/vivirun/releases) amd import it manually.
+Alternatively, download the splits file (`*.lss`) from the [release page](https://github.com/sam0x2b/vivirun/releases) amd import it manually.
 
 ### Manual installation
 
-This option is mostly for people who want to modify the script. The AutoSplitter (`*.asl`) can be found in the [latest release](https://github.com/sam0x2b/vivirun/releases).  Package version should match the latest supported game version.  You will have to modify the timer layout by adding a "Scriptable Auto Splitter".  An example of how to use these files can be found [here](https://steamcommunity.com/sharedfiles/filedetails/?id=2860375240) (for reference only).
+This option is mostly for people who want to modify the script. The AutoSplitter (`*.asl`) can be found on the [release page](https://github.com/sam0x2b/vivirun/releases).  You will have to modify the timer layout by adding a "Scriptable Auto Splitter".  An example of how to use these files can be found [here](https://steamcommunity.com/sharedfiles/filedetails/?id=2860375240) (for reference only).
 
 ## Known issues
 
 - Opening Vividerie after LiveSplit causes LiveSplit to crash, and there is nothing i can do on the script side to fix it _(?)_.  This can be worked around by running LiveSplit with administrator privileges.
-- Resetting a run does not correctly save the split time, overriding it with the time of the last split.  Workaround: confirm the time by resetting the timer first.
+- Resetting a run does not correctly handle the last split's time.  Workaround: confirm the time by resetting the timer first.
 
 ## Reporting issues
 
